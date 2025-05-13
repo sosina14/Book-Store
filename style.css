@@ -1,0 +1,536 @@
+/* ===== Base Styles ===== */
+:root {
+    --primary-color: #6c5ce7;
+    --primary-dark: #5649c0;
+    --secondary-color: #00cec9;
+    --dark-bg: #0f0f1a;
+    --darker-bg: #0a0a12;
+    --card-bg: #1a1a2e;
+    --card-border: #2a2a3e;
+    --text-primary: #f8f9fa;
+    --text-secondary: #adb5bd;
+    --success-color: #00b894;
+    --danger-color: #d63031;
+    --warning-color: #fdcb6e;
+    --info-color: #0984e3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ===== Animated Background ===== */
+.animated-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-45deg, #0f0f1a, #1a1a2e, #2a2a3e, #3a3a4e);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    z-index: -1;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ===== Main Container ===== */
+.main-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* ===== Header Styles ===== */
+.app-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--card-border);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.app-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.add-book-btn {
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.add-book-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== Search Section ===== */
+.search-section {
+    margin-bottom: 2rem;
+}
+
+.search-card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    border: 1px solid var(--card-border);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.search-card-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1.25rem 1.5rem;
+    font-size: 1.25rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.search-card-body {
+    padding: 1.5rem;
+}
+
+.search-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.search-input-group {
+    position: relative;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(108, 92, 231, 0.25);
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+}
+
+.search-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.search-btn, .clear-btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.search-btn:hover, .clear-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* ===== Books Section ===== */
+.books-section {
+    margin-bottom: 3rem;
+}
+
+.books-card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    border: 1px solid var(--card-border);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.books-card-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1.25rem 1.5rem;
+    font-size: 1.25rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.badge {
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.35rem 0.65rem;
+}
+
+.books-card-body {
+    padding: 1.5rem;
+}
+
+/* ===== Books Table ===== */
+.books-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.books-table thead th {
+    background-color: var(--darker-bg);
+    color: var(--text-primary);
+    font-weight: 500;
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 2px solid var(--card-border);
+}
+
+.books-table tbody tr {
+    transition: all 0.2s ease;
+}
+
+.books-table tbody tr:hover {
+    background-color: rgba(108, 92, 231, 0.1);
+}
+
+.books-table tbody td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--card-border);
+    vertical-align: middle;
+}
+
+.cover-col {
+    width: 80px;
+}
+
+.actions-col {
+    width: 120px;
+}
+
+/* ===== Book Cover Styles ===== */
+.book-cover {
+    width: 60px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid var(--card-border);
+    transition: transform 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.book-cover:hover {
+    transform: scale(1.1) rotate(2deg);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.no-cover {
+    width: 60px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--darker-bg), var(--card-bg));
+    border: 1px dashed var(--card-border);
+    border-radius: 4px;
+    color: var(--text-secondary);
+}
+
+.no-cover i {
+    font-size: 24px;
+}
+
+/* ===== Action Buttons ===== */
+.btn-action {
+    padding: 0.5rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    margin: 0 0.25rem;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+}
+
+.btn-action:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-action i {
+    margin: 0;
+}
+
+.edit-btn {
+    background-color: var(--info-color);
+    border-color: var(--info-color);
+    color: white;
+}
+
+.edit-btn:hover {
+    background-color: #0a7bc8;
+    border-color: #0a7bc8;
+}
+
+.delete-btn {
+    background-color: var(--danger-color);
+    border-color: var(--danger-color);
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #c02b2b;
+    border-color: #c02b2b;
+}
+
+/* ===== Modal Styles ===== */
+.modal-content {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+    border-bottom: 1px solid var(--card-border);
+    padding: 1.5rem;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.modal-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+.modal-footer {
+    border-top: 1px solid var(--card-border);
+    padding: 1.25rem 1.5rem;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 0;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.form-control {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--card-border);
+    color: var(--text-primary);
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(108, 92, 231, 0.25);
+    color: var(--text-primary);
+}
+
+textarea.form-control {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* ===== Cover Upload Styles ===== */
+.cover-upload {
+    margin-top: 1.5rem;
+}
+
+.upload-area {
+    position: relative;
+    border: 2px dashed var(--card-border);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.03);
+    overflow: hidden;
+}
+
+.upload-area:hover {
+    border-color: var(--primary-color);
+    background-color: rgba(108, 92, 231, 0.05);
+}
+
+.upload-area input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.upload-prompt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+}
+
+.upload-prompt i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.upload-prompt p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.upload-prompt small {
+    font-size: 0.85rem;
+}
+
+#coverPreview {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+#coverPreview img {
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 6px;
+    border: 1px solid var(--card-border);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== Responsive Styles ===== */
+@media (max-width: 992px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .search-form {
+        flex-direction: column;
+    }
+    
+    .search-buttons {
+        flex-direction: column;
+    }
+    
+    .search-btn, .clear-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        padding: 1rem;
+    }
+    
+    .app-title {
+        font-size: 2rem;
+    }
+    
+    .books-table thead {
+        display: none;
+    }
+    
+    .books-table tbody tr {
+        display: block;
+        margin-bottom: 1.5rem;
+        border: 1px solid var(--card-border);
+        border-radius: 8px;
+        padding: 1rem;
+    }
+    
+    .books-table tbody td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.75rem;
+        border-bottom: 1px solid var(--card-border);
+    }
+    
+    .books-table tbody td:last-child {
+        border-bottom: none;
+    }
+    
+    .books-table tbody td::before {
+        content: attr(data-label);
+        font-weight: 500;
+        margin-right: 1rem;
+        color: var(--text-secondary);
+    }
+    
+    .cover-col, .actions-col {
+        width: auto;
+    }
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.books-table tbody tr {
+    animation: fadeIn 0.5s ease forwards;
+    opacity: 0;
+}
+
+.books-table tbody tr:nth-child(1) { animation-delay: 0.1s; }
+.books-table tbody tr:nth-child(2) { animation-delay: 0.2s; }
+.books-table tbody tr:nth-child(3) { animation-delay: 0.3s; }
+.books-table tbody tr:nth-child(4) { animation-delay: 0.4s; }
+.books-table tbody tr:nth-child(5) { animation-delay: 0.5s; }

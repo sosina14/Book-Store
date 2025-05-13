@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luminous Pages | Bookstore Management</title>
+    <!-- Bootstrap Dark CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/darkly/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-background"></div>
+    
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Header with Navigation -->
+        <header class="app-header">
+            <div class="header-content">
+                <h1 class="app-title">
+                    <i class="fas fa-book-open me-2"></i>Luminous Pages
+                </h1>
+                <div class="header-actions">
+                    <button class="btn btn-success add-book-btn" data-bs-toggle="modal" data-bs-target="#bookModal">
+                        <i class="fas fa-plus me-1"></i> Add New Book
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="app-content">
+            <!-- Search Section -->
+            <section class="search-section">
+                <div class="search-card">
+                    <div class="search-card-header">
+                        <i class="fas fa-search me-2"></i>Discover Books
+                    </div>
+                    <div class="search-card-body">
+                        <form id="searchForm" class="search-form">
+                            <div class="search-input-group">
+                                <input type="text" class="search-input" id="searchTitle" placeholder="Title">
+                                <i class="fas fa-book search-icon"></i>
+                            </div>
+                            <div class="search-input-group">
+                                <input type="text" class="search-input" id="searchAuthor" placeholder="Author">
+                                <i class="fas fa-user search-icon"></i>
+                            </div>
+                            <div class="search-input-group">
+                                <input type="text" class="search-input" id="searchGenre" placeholder="Genre">
+                                <i class="fas fa-tags search-icon"></i>
+                            </div>
+                            <div class="search-buttons">
+                                <button type="submit" class="btn btn-primary search-btn">
+                                    <i class="fas fa-search me-1"></i> Search
+                                </button>
+                                <button type="button" id="clearSearch" class="btn btn-outline-secondary clear-btn">
+                                    <i class="fas fa-times me-1"></i> Clear
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Books Table Section -->
+            <section class="books-section">
+                <div class="books-card">
+                    <div class="books-card-header">
+                        <i class="fas fa-book me-2"></i>Your Collection
+                        <span class="badge bg-primary" id="bookCount">0</span>
+                    </div>
+                    <div class="books-card-body">
+                        <div class="table-responsive">
+                            <table class="books-table">
+                                <thead>
+                                    <tr>
+                                        <th class="cover-col">Cover</th>
+                                        <th>Title</th>
+                                        <th>Author</th>
+                                        <th>Genre</th>
+                                        <th>Published</th>
+                                        <th class="actions-col">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="booksTableBody">
+                                    <!-- Books will be loaded here via JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Book Modal (for Add/Edit) -->
+    <div class="modal fade" id="bookModal" tabindex="-1" aria-labelledby="bookModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="bookModalLabel">Add New Book</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="bookForm" enctype="multipart/form-data">
+                    <div class="modal-body">
+                        <input type="hidden" id="bookId">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="title" class="form-label">Title</label>
+                                <input type="text" class="form-control" id="title" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="author" class="form-label">Author</label>
+                                <input type="text" class="form-control" id="author" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="genre" class="form-label">Genre</label>
+                                <input type="text" class="form-control" id="genre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="publishedDate" class="form-label">Published Date</label>
+                                <input type="date" class="form-control" id="publishedDate" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="description" class="form-label">Description</label>
+                            <textarea class="form-control" id="description" rows="4" required></textarea>
+                        </div>
+                        <div class="cover-upload">
+                            <label for="coverImage" class="form-label">Cover Image</label>
+                            <div class="upload-area" id="uploadArea">
+                                <input class="form-control" type="file" id="coverImage" accept="image/*">
+                                <div class="upload-prompt">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <p>Click to upload or drag and drop</p>
+                                    <small>JPG, PNG (Max 2MB)</small>
+                                </div>
+                                <div class="mt-2" id="coverPreview"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save Book</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
