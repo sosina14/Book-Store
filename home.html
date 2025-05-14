@@ -12,27 +12,27 @@
 <body>
   <div class="login-container d-flex justify-content-center align-items-center min-vh-100 bg-light">
     <div class="card shadow-lg p-4" style="width: 100%; max-width: 500px;">
-      <h2 class="text-center mb-4 text-primary">Welcome to Bookstore</h2>
+      <h2 class="text-center mb-4 text-primary">Welcome to Bookstore <br> እንኳን ወደ መጽሐፍ መደብር በሰላም መጡ</h2>
       <form id="loginForm">
         <div class="mb-3">
-          <label for="name" class="form-label">Full Name</label>
+          <label for="name" class="form-label">Full Name -> ሙሉ ስም</label>
           <input type="text" id="name" class="form-control" placeholder="Your name" required />
         </div>
         <div class="mb-3">
-          <label for="email" class="form-label">Email address</label>
+          <label for="email" class="form-label">Email address -> ሜል አድራሻ</label>
           <input type="email" id="email" class="form-control" placeholder="example@mail.com" required />
         </div>
         <div class="mb-3">
-          <label for="password" class="form-label">Password</label>
+          <label for="password" class="form-label">Password -> የይለፍ ቃልኢ</label>
           <input type="password" id="password" class="form-control" required />
         </div>
         <div class="mb-3">
-          <label for="role" class="form-label">Select Role</label>
+          <label for="role" class="form-label">Select Role -> ሚና ይምረጡ</label>
           <select id="role" class="form-select" required>
             <option value="">Choose a role...</option>
-            <option value="admin">Admin</option>
-            <option value="author">Author</option>
-            <option value="customer">Customer</option>
+            <option value="admin">Admin [አስተዳዳሪ]</option>
+            <option value="author">Author[ደራሲ]</option>
+            <option value="customer">Customer[ደንበኛ]</option>
           </select>
         </div>
         <button type="submit" class="btn btn-primary w-100 mt-3">
@@ -61,3 +61,4 @@
   </script>
 </body>
 </html>
+

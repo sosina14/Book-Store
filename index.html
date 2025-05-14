@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bookstore Management</title>
+    <title>መጽሐፍመደብር</title>
     <!-- Bootstrap Dark CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/darkly/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -23,12 +23,12 @@
         <header class="app-header">
             <div class="header-content">
                 <h1 class="app-title" >
-                    <i class="fas fa-book-open me-2"></i>   Bookstore Management
+                    <i class="fas fa-book-open me-2"></i> Bookstore <br> መጽሐፍ መደብር
                 </h1>
                 <div class="header-actions">
                     <button class="btn btn-success add-book-btn" data-bs-toggle="modal" data-bs-target="#bookModal">
                         <i class="fas fa-plus me-1"></i> 
-                        Add New Book
+                        Add New Book <br>መጽሐፍ አዲስ ይጨምሩ
                     </button>
                 </div>
             </div>
@@ -40,7 +40,7 @@
             <section class="search-section">
                 <div class="search-card">
                     <div class="search-card-header">
-                        <i class="fas fa-search me-2"></i> Search Books
+                        <i class="fas fa-search me-2"></i> Search Books [መጽሐፍ ፈልግ]
                     </div>
                     <div class="search-card-body">
                         <form id="searchForm" class="search-form">
@@ -58,10 +58,10 @@
                             </div>
                             <div class="search-buttons">
                                 <button type="submit" class="btn btn-primary search-btn">
-                                    <i class="fas fa-search me-1"></i> Search
+                                    <i class="fas fa-search me-1"></i> Search ፈልግ
                                 </button>
                                 <button type="button" id="clearSearch" class="btn btn-outline-secondary clear-btn">
-                                    <i class="fas fa-times me-1"></i> Clear
+                                    <i class="fas fa-times me-1"></i> Clear ይሰርዝ
                                 </button>
                             </div>
                         </form>
@@ -73,7 +73,7 @@
             <section class="books-section">
                 <div class="books-card">
                     <div class="books-card-header">
-                        <i class="fas fa-book me-2"></i>Books in the Store
+                        <i class="fas fa-book me-2"></i>Books in the Store [መጽሐፍ ቤት ውስጥ]
                         <span class="badge bg-primary" id="bookCount">0</span>
                     </div>
                     <div class="books-card-body">
@@ -82,11 +82,11 @@
                                 <thead>
                                     <tr>
                                         <th class="cover-col">Cover</th>
-                                        <th>Title</th>
-                                        <th>Author</th>
-                                        <th>Genre</th>
-                                        <th>Published</th>
-                                        <th class="actions-col">Actions</th>
+                                        <th>Title <br>ርእስ</th>
+                                        <th>Author<br> ደራሲ</th>
+                                        <th>Genre <br>አይነት</th>
+                                        <th>Published<br> ታትሟል</th>
+                                        <th class="actions-col">Actions <br> Edit & Delet</th>
                                     </tr>
                                 </thead>
                                 <tbody id="booksTableBody">
@@ -148,7 +148,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Save Book</button>
+                        <button type="submit" class="btn btn-primary">Save Book </button>
                     </div>
                 </form>
             </div>
