@@ -2,14 +2,14 @@
 :root {
     --primary-color: #05aae6;
     --primary-dark: #000000;
-    --secondary-color: #00cec9;
+    --secondary-color: #d061dd;
     --dark-bg: #0f0f1a;
     --darker-bg: #effafb;
     --card-bg: #d5e6ee;
     --card-border: #000000;
     --text-primary: #6d4747;
     --text-secondary: #0f0f1a;
-    --success-color: #2d3836;
+    --success-color: #0dc3f0;
     --danger-color: #d63031;
     --warning-color: #fdcb6e;
     --info-color: #0984e3;
@@ -425,7 +425,7 @@ textarea.form-control {
 
 .upload-prompt {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     gap: 0.5rem;
     color: var(--text-secondary);
