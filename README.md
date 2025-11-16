@@ -1,7 +1,3 @@
-Sure, Sosina! Here's a clear and complete **project description** you can use for documentation, presentation, or submission:
-
----
-
 ## 📚 Bookstore Web Project
 
 ### 🔹 Description
@@ -90,4 +86,3 @@ This is a **simple Bookstore web application** built using **HTML, CSS, PHP**, a
 
 ---
 
-Let me know if you want a PDF version of this description or to expand it into a proper `README.md`!
