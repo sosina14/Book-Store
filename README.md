@@ -8,6 +8,7 @@ This is a **simple Bookstore web application** built using **HTML, CSS, PHP**, a
 
 ### 🔹 Features
 
+
 #### 1. **Login Page (`home.html`)**
 
 * Users enter their **Name**, **Email**, **Password**, and select a **Role** (Admin, Author, or Customer).
